@@ -723,12 +723,12 @@ function collectPropertyFormData() {
   }
 
   if (!PROPERTY_TYPES.includes(type)) {
-    showStatus(elements.adminStatus, "Tipo de imovel invalido.", "warning");
+    showStatus(elements.adminStatus, "Tipo de imóvel inválido.", "warning");
     return null;
   }
 
   if (!BUSINESS_TYPES.includes(businessType)) {
-    showStatus(elements.adminStatus, "Tipo de negocio invalido.", "warning");
+    showStatus(elements.adminStatus, "Tipo de negócio inválido.", "warning");
     return null;
   }
 
