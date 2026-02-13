@@ -1,0 +1,143 @@
+﻿<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CRECI - 075-400</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body> 
+  <div class="top-banner" role="status" aria-live="polite">
+    <div class="top-banner-inner">
+      <strong>Atendimento Online e Presencial</strong>
+      <span>Novos imoveis toda semana • Resposta rapida via WhatsApp</span>
+    </div>
+  </div>
+
+  <header class="hero hero-home">
+    <div class="hero-copy">
+      <div class="brand-row">
+        <span class="brand-logo" aria-hidden="true">
+          <svg class="brand-logo-icon" viewBox="0 0 24 24" focusable="false">
+            <path d="M3.75 10.5L12 3.75l8.25 6.75M5.25 9.75V20.25H18.75V9.75M9.75 20.25V14.25h4.5v6"></path>
+          </svg>
+        </span>
+        <h1>Amanda Vianna Imóveis</h1>
+      </div>
+      <p class="hero-description">
+        Transformamos oportunidades em negócios seguros. Atuamos com transparência, agilidade e atendimento personalizado para ajudar você a comprar, vender ou alugar seu imóvel com total confiança.
+      </p>
+      <div class="hero-highlights" aria-label="Destaques da imobiliária">
+        <span>Compra e Venda</span>
+        <span>Locação</span>
+        <span>Avaliação de Imóveis</span>
+      </div>
+      <p class="eyebrow">CRECI - 075-400</p>
+    </div>
+
+    <aside class="hero-showcase" aria-label="Resumo de atendimento">
+      <p class="hero-showcase-label">Consultoria Imobiliária</p>
+      <h2>Atendimento estratégico para fechar negócios com segurança.</h2>
+      <div class="hero-stats">
+        <article>
+          <strong>300+</strong>
+          <span>Clientes atendidos</span>
+        </article>
+        <article>
+          <strong>Mais de 7 anos</strong>
+          <span>Atuando no mercado imobiliário</span>
+        </article>
+        <article>
+          <strong>RJ</strong>
+          <span>Atuação no Rio e região</span>
+        </article>
+      </div>
+    </aside>
+  </header>
+
+  <main class="layout public-layout">
+    <section class="panel filters-panel" aria-label="Filtros de imoveis">
+      <div class="panel-title">
+        <h2>Filtros</h2>
+        <button id="clear-filters" type="button" class="ghost-button">Limpar</button>
+      </div>
+
+      <div id="global-status" class="status-banner status-info hidden" role="status"></div>
+
+      <label class="field">
+        <span>Valor minimo (R$)</span>
+        <input id="min-price" type="number" min="0" step="1000" placeholder="Ex: 200000">
+      </label>
+
+      <label class="field">
+        <span>Valor maximo (R$)</span>
+        <input id="max-price" type="number" min="0" step="1000" placeholder="Ex: 900000">
+      </label>
+
+      <div class="filter-block">
+        <p>Tipo de imovel</p>
+        <div id="type-filters" class="checkbox-group"></div>
+      </div>
+
+      <div class="filter-block">
+        <p>Bairro</p>
+        <div id="neighborhood-filters" class="checkbox-group">
+          <span class="muted">Sem bairros cadastrados.</span>
+        </div>
+      </div>
+
+      <div class="filter-block">
+        <p>Quartos</p>
+        <div id="bedroom-filters" class="checkbox-group">
+          <span class="muted">Sem dados de quartos.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="catalog-panel">
+      <div class="catalog-header">
+        <h2>Imoveis disponiveis</h2>
+        <p id="results-count" class="muted">0 resultados</p>
+      </div>
+
+      <div id="property-grid" class="property-grid"></div>
+
+      <div id="empty-catalog" class="empty-state hidden">
+        <h3>Nenhum imovel encontrado</h3>
+        <p>Ajuste os filtros ou tente novamente depois.</p>
+      </div>
+    </section>
+  </main>
+
+  <template id="property-card-template">
+    <article class="property-card">
+      <div class="property-image-wrap">
+        <button type="button" class="property-nav property-nav-prev hidden" aria-label="Imagem anterior">&#10094;</button>
+        <img class="property-image" src="" alt="">
+        <button type="button" class="property-nav property-nav-next hidden" aria-label="Proxima imagem">&#10095;</button>
+        <span class="property-image-indicator hidden" aria-live="polite"></span>
+      </div>
+      <div class="property-body">
+        <p class="property-price"></p>
+        <h3 class="property-title"></h3>
+        <p class="property-location muted"></p>
+        <div class="property-tags"></div>
+        <p class="property-description"></p>
+        <div class="whatsapp-actions">
+          <a class="whatsapp-button whatsapp-amanda" target="_blank" rel="noopener noreferrer">WhatsApp Amanda</a>
+          <a class="whatsapp-button whatsapp-joao" target="_blank" rel="noopener noreferrer">
+            <span class="whatsapp-line">WhatsApp</span>
+            <span class="whatsapp-name">João</span>
+          </a>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <script src="supabase-config.js"></script>
+  <script type="module" src="catalog.js"></script>
+</body>
+</html>
