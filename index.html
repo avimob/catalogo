@@ -59,10 +59,25 @@
   </header>
 
   <main class="layout public-layout">
-    <section class="panel filters-panel" aria-label="Filtros de imoveis">
+    <button
+      id="mobile-filters-toggle"
+      type="button"
+      class="mobile-filters-toggle"
+      aria-controls="filters-panel"
+      aria-expanded="false"
+    >
+      Filtrar imoveis
+    </button>
+
+    <section id="filters-panel" class="panel filters-panel" aria-label="Filtros de imoveis">
       <div class="panel-title">
         <h2>Filtros</h2>
-        <button id="clear-filters" type="button" class="ghost-button">Limpar</button>
+        <div class="panel-title-actions">
+          <button id="clear-filters" type="button" class="ghost-button">Limpar</button>
+          <button id="mobile-filters-close" type="button" class="ghost-button mobile-filters-close">
+            Aplicar
+          </button>
+        </div>
       </div>
 
       <div id="global-status" class="status-banner status-info hidden" role="status"></div>
@@ -96,6 +111,8 @@
         </div>
       </div>
     </section>
+
+    <div id="mobile-filters-backdrop" class="mobile-filters-backdrop hidden" aria-hidden="true"></div>
 
     <section class="catalog-panel">
       <div class="catalog-header">
