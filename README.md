@@ -3,7 +3,7 @@
 Site completo de imobiliaria em HTML, CSS e JavaScript puro, com:
 
 - catalogo responsivo de imoveis
-- filtros em tempo real (valor, bairro, quartos e tipo)
+- filtros em tempo real (valor, bairro, quartos, tipo de imovel e tipo de negocio)
 - botao de contato via WhatsApp em cada card
 - painel administrativo (login, cadastro, edicao e remocao)
 - upload multiplo de fotos com compressao automatica no navegador
@@ -64,5 +64,5 @@ Abra `http://localhost:5500`.
 ## Observacoes
 
 - As imagens sao convertidas para WebP e redimensionadas automaticamente antes do upload.
-- Para WhatsApp, informe o numero com codigo do pais (ex: `5511999999999`).
+- O campo de WhatsApp no cadastro do imovel e opcional.
 - As politicas do SQL deixam o catalogo publico e restringem alteracoes a usuarios autenticados.
